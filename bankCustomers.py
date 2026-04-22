@@ -23,3 +23,9 @@ input_columns_resampled, target_column_resampled=oversampler.fit_resample(input_
 df_balanced=pd.concat([input_columns_resampled, target_column_resampled], axis=1)
 class_distribution=df_balanced['Exited'].value_counts()
 print(class_distribution)
+
+x=df_balanced.iloc[:, 3:13].values
+print(x)
+
+y=df_balanced.iloc[:, 13].values
+print(y)
