@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from imblearn.over_sampling import RandomOverSampler 
+from sklearn.preprocessing import LabelEncoder
 
 df=pd.read_csv('Churn_Modelling.csv')
 print(df.head())
@@ -29,3 +30,7 @@ print(x)
 
 y=df_balanced.iloc[:, 13].values
 print(y)
+
+labelencoder_gender=LabelEncoder()
+x[:, 2]=labelencoder_gender.fit_transform(x[:, 2])
+print(x[:,2])
